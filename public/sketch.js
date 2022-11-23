@@ -13,7 +13,9 @@ function preload() {
     host = window.location.host;
     fontBebas = loadFont('assets/BebasNeue-Regular.woff');
     userName = hex(random(1000000));
-    socket = new WebSocket('ws://' + host)
+
+    socket = new WebSocket('ws://' + host || 'wss://' + host );
+    
 }
 
 function setup() {
