@@ -13,6 +13,7 @@ function preload() {
     host = window.location.host;
     fontBebas = loadFont('assets/BebasNeue-Regular.woff');
     userName = hex(random(1000000));
+    socket = new WebSocket('wss://liveavserver.herokuapp.com')
 }
 
 function setup() {
@@ -22,7 +23,7 @@ function setup() {
 
     // connect to server:
     // socket = new WebSocket('ws://' + host);
-    socket = new WebSocket('wss://liveavserver.herokuapp.com')
+    
 
     // socket connection listener:
     // socket.onopen = sendIntro;
