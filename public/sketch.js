@@ -69,5 +69,4 @@ function sendIntro() {
     msg = event.data; // read data from the onmessage event
     // console.log(msg); // print it
   }
-const rectSize = 100;
 
