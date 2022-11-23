@@ -26,9 +26,9 @@ function setup() {
     
 
     // socket connection listener:
-    // socket.onopen = sendIntro;
+    socket.onopen = sendIntro;
     // socket message listener:
-    // socket.onmessage = readMessage;
+    socket.onmessage = readMessage;
 }
 
 function draw() {
