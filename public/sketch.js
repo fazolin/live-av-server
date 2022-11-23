@@ -77,5 +77,6 @@ function readMessage(event) {
 
 async function sendMessage(message) {
     console.log(message);
+    socket.send('teste');
 }
 
