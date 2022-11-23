@@ -57,6 +57,9 @@ function draw() {
     userData.px = mouseX;
     userData.py = mouseY;
 
+    if (socket.onopen){
+        console.log('connection');
+    }
     // console.log(userData);
     // socket.send(JSON.stringify(userData))
 
