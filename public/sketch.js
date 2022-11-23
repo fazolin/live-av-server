@@ -58,7 +58,7 @@ function draw() {
     userData.py = mouseY;
 
     // console.log(userData);
-    // socket.send(JSON.stringify(userData))
+    socket.send(JSON.stringify(userData))
 
     text(msg,10,window.innerHeight/2);
 }
