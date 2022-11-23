@@ -59,7 +59,7 @@ function draw() {
 
     if (socket.onopen){
         console.log('connection');
-        socket.send(JSON.stringify(userData))
+        socket.send("oioi");
     }
     // console.log(userData);
     // socket.send(JSON.stringify(userData))
