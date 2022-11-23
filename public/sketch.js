@@ -88,4 +88,8 @@ function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     background(255,0,0);
     console.log(host);
+    rectMode(CENTER);
+
+    // connect to server:
+    socket = new WebSocket('ws://' + host);
 }
