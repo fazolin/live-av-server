@@ -91,5 +91,5 @@ function setup() {
     rectMode(CENTER);
 
     // connect to server:
-    socket = new WebSocket('ws://' + host);
+    socket = new WebSocket('wss://' + host);
 }
