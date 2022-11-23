@@ -11,10 +11,16 @@ var socket; // the websocket
 
 function preload() {
     host = window.location.host;
+
     fontBebas = loadFont('assets/BebasNeue-Regular.woff');
     userName = hex(random(1000000));
 
-    socket = new WebSocket('ws://' + host || 'wss://' + host );
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+        socket = new WebSocket('ws://' + host);
+    }else{
+        socket = new WebSocket('wss://' + host);
+    }
+    
     
 }
 
