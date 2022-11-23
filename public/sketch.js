@@ -59,24 +59,18 @@ function draw() {
 
     sendMessage(JSON.stringify(userData))
 
-    // console.log(userData);
-    // socket.send(JSON.stringify(userData))
-
     text(msg, 10, window.innerHeight / 2);
 }
 
 function sendIntro() {
-    // convert the message object to a string and send it:
     socket.send("Hello");
 }
 
 function readMessage(event) {
     msg = event.data; // read data from the onmessage event
-    // console.log(msg); // print it
 }
 
 async function sendMessage(message) {
-    console.log(message);
     socket.send(message);
 }
 
