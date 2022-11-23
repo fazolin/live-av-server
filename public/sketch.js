@@ -31,7 +31,7 @@ function setup() {
     socket.onmessage = readMessage;
 }
 
-async function draw() {
+function draw() {
     background(0);
     textSize(16);
 
@@ -57,7 +57,7 @@ async function draw() {
     userData.px = mouseX;
     userData.py = mouseY;
 
-    sendMessage(userData);
+    
 
     // console.log(userData);
     // socket.send(JSON.stringify(userData))
