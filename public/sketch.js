@@ -57,7 +57,7 @@ function draw() {
     userData.px = mouseX;
     userData.py = mouseY;
 
-    
+    sendMessage('teste')
 
     // console.log(userData);
     // socket.send(JSON.stringify(userData))
@@ -75,7 +75,7 @@ function readMessage(event) {
     // console.log(msg); // print it
 }
 
-await function sendMessage(message) {
+async function sendMessage(message) {
     console.log(message);
 }
 
