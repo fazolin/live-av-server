@@ -16,14 +16,12 @@ server.listen(port);
 console.log(`Server started on port ${port}`);
 
 
-
-
 wss.on('connection', function connection(ws) {
 
     ws.on('message', function message(data) {
 
         var receivedData = String(data);
-        console.log(receivedData);
+        // console.log(receivedData);
         broadcast(ws, receivedData);
     });
 

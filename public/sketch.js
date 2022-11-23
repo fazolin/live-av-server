@@ -6,7 +6,6 @@ var msg;
 
 var host;
 
-// var host = 'localhost:8080';
 var socket; // the websocket
 
 function preload() {
@@ -15,23 +14,19 @@ function preload() {
     fontBebas = loadFont('assets/BebasNeue-Regular.woff');
     userName = hex(random(1000000));
 
+    // checking if dev or production enviroment
+
     if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
         socket = new WebSocket('ws://' + host);
     }else{
         socket = new WebSocket('wss://' + host);
     }
-    
-    
 }
 
 function setup() {
     // console.log(host);
     createCanvas(window.innerWidth, window.innerHeight);
     rectMode(CENTER);
-
-    // connect to server:
-    // socket = new WebSocket('ws://' + host);
-
 
     // socket connection listener:
     socket.onopen = sendIntro;
