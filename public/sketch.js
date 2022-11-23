@@ -16,12 +16,12 @@ function preload() {
 }
 
 function setup() {
-    console.log(host);
+    // console.log(host);
     createCanvas(window.innerWidth, window.innerHeight);
     rectMode(CENTER);
 
     // connect to server:
-    socket = new WebSocket('wss://' + host);
+    socket = new WebSocket('ws://' + host);
     // socket connection listener:
     socket.onopen = sendIntro;
     // socket message listener:
