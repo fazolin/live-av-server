@@ -1,4 +1,4 @@
-require('dotenv').config()
+port = process.env.PORT || 8080;
 
 const express = require("express");
 const path = require("path");
@@ -12,8 +12,8 @@ const server = http.createServer(app);
 const WebSocket = require("ws");
 const wss = new WebSocket.Server({ server: server });
 
-server.listen(process.env.PORT);
-console.log(`Server started on port ${process.env.PORT}`);
+server.listen(port);
+console.log(`Server started on port ${port}`);
 
 
 
