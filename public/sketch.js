@@ -31,7 +31,7 @@ function setup() {
     socket.onmessage = readMessage;
 }
 
-function draw() {
+async function draw() {
     background(0);
     textSize(16);
 
