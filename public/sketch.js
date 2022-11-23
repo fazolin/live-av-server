@@ -25,9 +25,9 @@ function setup() {
     socket = new WebSocket('wss://liveavserver.herokuapp.com')
 
     // socket connection listener:
-    socket.onopen = sendIntro;
+    // socket.onopen = sendIntro;
     // socket message listener:
-    socket.onmessage = readMessage;
+    // socket.onmessage = readMessage;
 }
 
 function draw() {
@@ -57,7 +57,7 @@ function draw() {
     userData.py = mouseY;
 
     // console.log(userData);
-    socket.send(JSON.stringify(userData))
+    // socket.send(JSON.stringify(userData))
 
     text(msg,10,window.innerHeight/2);
 }
