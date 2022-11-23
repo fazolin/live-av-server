@@ -4,12 +4,13 @@ var userName;
 var userData = {};
 var msg;
 
-var host = window.location.host; 
+var host;
 
 // var host = 'localhost:8080';
 var socket; // the websocket
 
 function preload() {
+    host = window.location.host;
     fontBebas = loadFont('assets/BebasNeue-Regular.woff');
     userName = hex(random(1000000));
 }
