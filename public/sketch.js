@@ -22,7 +22,7 @@ function setup() {
 
     // connect to server:
     // socket = new WebSocket('ws://' + host);
-    socket = new WebSocket('ws://liveavserver.herokuapp.com')
+    socket = new WebSocket('wss://liveavserver.herokuapp.com')
 
     // socket connection listener:
     socket.onopen = sendIntro;
