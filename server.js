@@ -21,11 +21,15 @@ wss.on('connection', function connection(ws) {
     ws.on('message', function message(data) {
 
         var receivedData = String(data);
+        if(receivedData === 'pong'){
+            console.log('Received pong');
+        }
         // console.log(receivedData);
         broadcast(ws, receivedData);
     });
 
     ws.send('something');
+    ping(ws, 'ping');
 });
 
 const broadcast = (ws, message) => {
@@ -35,3 +39,14 @@ const broadcast = (ws, message) => {
 };
 
 
+
+async function ping(socket) {
+    // if (!socket) return;
+    // if (socket.readyState !== 1) return;
+    // socket.send("heartbeat");
+    wss.clients.forEach((client) => {
+        client.send('ping');
+    })
+    setTimeout(ping, 5000);
+    console.log('Sending ping');
+}
