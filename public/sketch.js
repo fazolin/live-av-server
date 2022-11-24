@@ -8,6 +8,8 @@ var host;
 
 var socket; // the websocket
 
+var blink = 0;
+
 function preload() {
     host = window.location.host;
 
@@ -16,9 +18,9 @@ function preload() {
 
     // checking if dev or production enviroment
 
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
         socket = new WebSocket('ws://' + host);
-    }else{
+    } else {
         socket = new WebSocket('wss://' + host);
     }
 }
@@ -32,11 +34,22 @@ function setup() {
     socket.onopen = sendIntro;
     // socket message listener:
     socket.onmessage = readMessage;
+
+
 }
 
 function draw() {
+
+
+
     background(0);
+
     textSize(16);
+
+    fill(blink,0,0);
+    rect(window.innerWidth / 2, window.innerHeight / 2, window.innerWidth, window.innerHeight);
+    blink = blink-5;
+
 
     fill(255);
     ellipse(mouseX, mouseY, frameCount % 50);
@@ -71,9 +84,14 @@ function sendIntro() {
 
 function readMessage(event) {
     msg = event.data; // read data from the onmessage event
+    if (msg === 'ping') {
+        console.log('Received pong');
+        console.log('Sending pong');
+        sendMessage('pong');
+        blink = 255;
+    }
 }
 
 async function sendMessage(message) {
     socket.send(message);
 }
-
